@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Interactive Code Playground</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Include CodeMirror CSS & JS for syntax highlighting -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.7/codemirror.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.7/theme/dracula.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.7/codemirror.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.7/mode/htmlmixed/htmlmixed.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.7/mode/css/css.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.7/mode/javascript/javascript.min.js"></script>
+</head>
+<body>
+  <header>
+    <h1>Interactive Code Playground</h1>
+    <div class="controls">
+      <select id="theme-select" title="Select Theme">
+        <option value="default">Default</option>
+        <option value="dracula" selected>Dracula</option>
+      </select>
+      <button id="save-btn" title="Save snippet to localStorage">Save</button>
+      <button id="load-btn" title="Load snippet from localStorage">Load</button>
+      <button id="export-btn" title="Export files">Export</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="editor-wrapper">
+      <div class="editor-container">
+        <label for="html-editor">HTML</label>
+        <textarea id="html-editor"></textarea>
+      </div>
+      <div class="editor-container">
+        <label for="css-editor">CSS</label>
+        <textarea id="css-editor"></textarea>
+      </div>
+      <div class="editor-container">
+        <label for="js-editor">JavaScript</label>
+        <textarea id="js-editor"></textarea>
+      </div>
+    </section>
+    <section class="preview-wrapper">
+      <label>Live Preview</label>
+      <iframe id="preview" sandbox="allow-scripts allow-same-origin"></iframe>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
